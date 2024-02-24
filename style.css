@@ -1,0 +1,254 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: futura;
+}
+*::selection{
+    color: white;
+    background: black;
+}
+ 
+html,body{
+height:100%;
+width:100%;
+}
+.page1{
+    min-height: 100dvh;
+    width: 100vw;
+    position: relative;
+    padding: 0 2vw;
+    padding-top: 25vh;
+}
+
+nav{
+    width: 100%;
+    z-index: 99;
+    position: fixed;
+    padding: 10px 15px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.nleft svg{
+    display: block;
+}
+.nleft{
+    overflow: hidden;
+    height: 83px;
+}
+.nright{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 10px;
+    text-transform: uppercase;
+    float: right;
+}
+a{
+    text-decoration: none;
+    color:rgb(62, 62, 62);
+    font-size: 16px;
+    font-family: monospace;
+    margin-right: 10px;
+}
+.nright2{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+.nright2 i{
+    margin-right: 10px;
+}
+
+.change{
+    text-align: center;
+}
+
+
+.page1 h1{
+    font-family: futura;
+    font-size: 14vw;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 12vw;
+    letter-spacing: -8px;
+}
+
+.video-container{
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    margin-top: 1vw;
+}
+.video-container video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.play{
+    padding: 3vw 2.2vw;
+    background-color: black;
+    color: white;
+    font-size: 1.2vw;
+    text-transform: uppercase;
+    position: fixed;
+    border-radius: 50%;
+    opacity: 0;
+    scale: 0;
+    z-index: 9;
+}
+.page2{
+    min-height: 100vh;
+    /* width: 100%; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+.page2 .elem{
+    min-height: 100vh;
+    width: 35%;
+    overflow:hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: red; */
+    /* border: 2px solid; */
+    padding: 0 5px;
+}
+.elem img{
+    height: 100%;
+    width: 110%;
+    background-size: contain;
+    scale: 0.9;
+    /* border: 2px solid blue; */
+}
+ 
+
+.info{
+    height: 50px;
+    width: 70%;
+    border-radius: 50px;
+    background-color: rgb(251, 255, 204);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+.info:hover {
+    height: 100px; /* Change the desired increased height on hover */
+    transform: translateY(0); /* Move the element upwards to keep the top at the same level */
+}
+.info span{
+    font-family: monospace;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+
+.page3{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.box{
+    height: 45vh;
+    width: 40vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box .img{
+    height: 100%;
+    background: red;
+    
+}
+
+.cursor{
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background-color: rgba(239, 239, 239, 0.774);
+    position: fixed;
+    transform: translate(-50%,-50%) scale(0);
+
+}
+
+@media (max-width:600px) {
+
+
+    .page1{
+        min-height: 70vh;
+        width: 100%;
+        padding: 0 3vw;
+        padding-top: 20vh;
+    }
+    
+    
+    .page1 h1{
+        font-size: 20vw;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        line-height: 8vh;
+        text-align: center;
+    }
+   .page1 .the{
+        text-align: center;
+        font-size: 16vw;
+        letter-spacing: -1px;
+    }
+    .video-container{
+        height: 25vh;
+        width: 100%;
+        position: relative;
+        margin-top: 3vw;
+    }
+    .page2{
+        height: 100%;
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5vw;
+        gap: 10px;
+    }
+    .page2 .elem{
+        height: 100vh;
+        width: 100%;
+        overflow:hidden;
+        margin-top: 5px;
+    }
+    .elem img{
+        height: 100%;
+        width: 100%;
+        scale: 1.1;
+    }
+
+    .page3{
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+    }
+    .box{
+        width: 100%;
+        height: 100%;
+    }
+    
+
+
+}
