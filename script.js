@@ -11,19 +11,21 @@ var scroll = new LocomotiveScroll({
 
 
 
+
 function videoconanimation(){
     var videocon=document.querySelector(".video-container")
 var playbtn=document.querySelector(".play")
 
 videocon.addEventListener("mouseenter",function(){
    gsap.to(playbtn,{
-    opacity:1,
-    scale:1,
+    
    })
 })
 videocon.addEventListener("mousemove",function(dets){
     console.log(dets)
    gsap.to(playbtn,{
+    opacity:1,
+    scale:1,
     left:dets.x,
     top:dets.y,
    })
@@ -78,7 +80,28 @@ loadinganimation();
 function cursorAnimation(){
     let cursor=document.querySelector(".cursor");
     document.querySelectorAll(".box").forEach(function(elem){
+        
         elem.addEventListener("mouseenter",function(){
+            if(elem.id==="box1"){
+                gsap.to(cursor,{
+                    backgroundColor:"rgba(211, 211, 211, 0.732)"
+                })
+            }
+            if(elem.id==="box2"){
+                gsap.to(cursor,{
+                    backgroundColor:"rgba(218, 198, 198, 0.792)"
+                })
+            }
+            if(elem.id==="box3"){
+                gsap.to(cursor,{
+                    backgroundColor:"rgba(250, 193, 202, 0.841)"
+                })
+            }
+            if(elem.id==="box4"){
+                gsap.to(cursor,{
+                    backgroundColor:"rgba(231, 231, 181, 0.836)"
+                })
+            }
             gsap.to(cursor,{
                 transform: 'translate(-50%,-50%) scale(1)'
             })
@@ -88,14 +111,15 @@ function cursorAnimation(){
                 transform: 'translate(-50%,-50%) scale(0)'
             })
         })
+        elem.addEventListener("mousemove",function(dets){
+            console.log(elem);
+            gsap.to(cursor,{
+                left:dets.x,
+                top:dets.y
+            })
+        })
      })
     
-    document.addEventListener("mousemove",function(dets){
-        gsap.to(cursor,{
-            left:dets.x,
-            top:dets.y
-        })
-    })
 }
 cursorAnimation()
 

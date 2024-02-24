@@ -143,6 +143,16 @@ a{
     align-items: center;
     justify-content: space-evenly;
     overflow: hidden;
+    transition: 0.3s;
+}
+#info1{
+    background-color: #E5F0D6;
+}
+#info2{
+    background-color: #F5DFCF;
+}
+#info3{
+    background-color: #FFFFFF;
 }
 .info:hover {
     height: 100px; /* Change the desired increased height on hover */
@@ -174,7 +184,7 @@ a{
 }
 .box .img{
     height: 100%;
-    background: red;
+    background: rgba(250, 193, 202, 0.841);
     
 }
 
