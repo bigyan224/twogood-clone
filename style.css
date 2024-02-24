@@ -143,7 +143,6 @@ a{
     align-items: center;
     justify-content: space-evenly;
     overflow: hidden;
-    transition: 0.3s;
 }
 #info1{
     background-color: #E5F0D6;
@@ -157,6 +156,7 @@ a{
 .info:hover {
     height: 100px; /* Change the desired increased height on hover */
     transform: translateY(0); /* Move the element upwards to keep the top at the same level */
+    transition: 0.3s;
 }
 .info span{
     font-family: monospace;
