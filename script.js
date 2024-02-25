@@ -1,3 +1,50 @@
+function locomotiveanimation(){
+    gsap.registerPlugin(ScrollTrigger);
+
+const locoScroll = new LocomotiveScroll({
+  el: document.querySelector(".main"),
+  smooth: true,
+
+  // for tablet smooth
+  tablet: { smooth: true },
+
+  // for mobile
+  smartphone: { smooth: true }
+});
+locoScroll.on("scroll", ScrollTrigger.update);
+
+ScrollTrigger.scrollerProxy(".main", {
+  scrollTop(value) {
+    return arguments.length
+      ? locoScroll.scrollTo(value, 0, 0)
+      : locoScroll.scroll.instance.scroll.y;
+  },
+  getBoundingClientRect() {
+    return {
+      top: 0,
+      left: 0,
+      width: window.innerWidth,
+      height: window.innerHeight
+    };
+  }
+
+  // follwoing line is not required to work pinning on touch screen
+
+  /* pinType: document.querySelector(".main").style.transform
+    ? "transform"
+    : "fixed"*/
+});
+
+
+
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+ScrollTrigger.refresh();
+
+}
+
+locomotiveanimation()
+
 var scroll = new LocomotiveScroll({
     el: document.querySelector('.main'),
     smooth: true,
@@ -125,13 +172,62 @@ cursorAnimation()
 
 gsap.to(".logocontainer svg",{
     transform:"translateY(-100%)",
-    // ScrollTrigger:{
-    //     trigger:".page1",
-    //     scroller:".main",
-    //     marker:true,
-    //     start:"top 0",
-    //     end:"top -5%",
-    //     scrub:true
-    // }
+    scrollTrigger:{
+        trigger:".page1",
+        scroller:".main",
+        start:"top 0%",
+        end:"top -5%",
+        scrub:2
+    }
 })
+gsap.to(".nright a",{
+    transform:"translateY(-100%)",
+    opacity:0,
+    scrollTrigger:{
+        trigger:".page1",
+        scroller:".main",
+        start:"top 0%",
+        end:"top -5%",
+        scrub:2
+    }
+})
+function navanimation() {
+    let svgs =document.querySelector(".svg");
+    let show = false;
+    const overflowNav = document.querySelector(".overflow-nav");
+    let paths="";
+  
+    document.querySelector("#nav").addEventListener("click", function () {
+        if (!show) {
+            // Select the path elements inside the SVG with the class "svg"
+paths = document.querySelectorAll(".svg path");
 
+// Loop through each path element and change its fill color
+paths.forEach(path => {
+    path.setAttribute("fill", "white")
+    path.style.transition="0.5s"; // Change "white" to your desired color
+});
+
+        overflowNav.style.display = "block"; // Show the element before the animation
+        gsap.to(overflowNav, {
+          duration: 1,
+          y: 0,
+        });
+      } else {
+        paths.forEach(path => {
+            path.style.transition-"0.5s"
+            path.setAttribute("fill", "black"); // Change "white" to your desired color
+        });
+        gsap.to(overflowNav, {
+          duration: 1,
+          y: "-100%",
+          onComplete: () => {
+            overflowNav.style.display = "none"; // Hide the element after the animation
+          },
+        });
+      }
+      show = !show;
+    });
+  }
+  navanimation()
+  

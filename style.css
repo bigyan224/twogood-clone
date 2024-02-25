@@ -53,6 +53,7 @@ a{
     margin-right: 10px;
 }
 .nright2{
+    z-index: 555;
     display: flex;
     gap: 50px;
     align-items: center;
@@ -63,6 +64,7 @@ a{
 }
 .nright2 i{
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .change{
@@ -198,6 +200,39 @@ a{
 
 }
 
+.overflow-nav{
+    background-color:black;
+    color:white;
+    height: 100vh;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    padding:30px;
+    transform:translateY(-100%);
+    display: none;
+    position: fixed;
+    z-index: 99;
+}
+.over-left{
+    background: red;;
+}
+.over-right{
+    display:flex;
+    flex-direction:column;
+    align-items:end;
+    justify-content:end;
+    padding:30px;
+    margin-top: 5%;
+}
+.over-right h2{
+    cursor: pointer;
+    font-size:7vh;
+    text-transform:uppercase;
+    font-weight:800;
+    line-height:55px;
+
+}
+
 @media (max-width:600px) {
 
 
@@ -207,12 +242,25 @@ a{
         padding: 0 3vw;
         padding-top: 20vh;
     }
+
+    .nright a{
+        display:none;
+    }
+    .nleft {
+        height:60px;
+        width:80px;
+    }
+
+    svg{
+        height:60px;
+        width:80px;
+    }
     
     
     .page1 h1{
         font-size: 20vw;
         text-transform: uppercase;
-        letter-spacing: 5px;
+        letter-spacing: -1px;
         line-height: 8vh;
         text-align: center;
     }
@@ -222,7 +270,7 @@ a{
         letter-spacing: -1px;
     }
     .video-container{
-        height: 25vh;
+        height: 30vh;
         width: 100%;
         position: relative;
         margin-top: 3vw;
@@ -238,9 +286,8 @@ a{
         gap: 10px;
     }
     .page2 .elem{
-        height: 100vh;
+        min-height: 80vh;
         width: 100%;
-        overflow:hidden;
         margin-top: 5px;
     }
     .elem img{
@@ -258,7 +305,17 @@ a{
         width: 100%;
         height: 100%;
     }
+    .over-right h2{
+        cursor: pointer;
+        font-size:6vh;
+        text-transform:uppercase;
+        font-weight:800;
+        line-height:50px;
     
+    }
+    .over-right{
+        margin-top: 30%;
+    }
 
 
 }
